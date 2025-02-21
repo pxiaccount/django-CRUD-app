@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD App</title>
+    <style>
+        body {
+            font-family:  sans-serif;
+            background-color: rgb(41, 35, 35);
+            color: white;
+        }
+        a {
+            color:yellowgreen
+        }
+        a:hover {
+            color: yellow;
+            transition: 0.25s;
+        }
+        table, tr, td, th {
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <h1>CRUD App</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        {% for x in products %}
+        <tr>
+            <td>{{x.name}}</td>
+            <td>{{ x.age }}</td>
+            <td><a href="remove_model/{{x.id}}">Delete</a></td>
+            <td><a href="update/{{x.id}}">Update</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="add/">Add data to table</a>
+</body>
+</html>
